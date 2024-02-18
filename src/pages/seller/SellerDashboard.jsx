@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import ProductTable from "../../components/ui/seller/ProductTable";
-import Cards from "../../components/ui/seller/cards";
+import Cards from "../../components/ui/seller/Cards";
 import { setAuthUsername } from "../../helper/Auth.helper";
 
 function SellerDashboard() {
