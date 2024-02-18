@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/fontawesome-free-solid";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
+import MainBanner from "../.././public/assets/featureimages/main-banner.jpg";
 
 function Home() {
 
@@ -9,7 +10,10 @@ function Home() {
     <>
       <div>
         {/*  Main-Banner  */}
-        <div className="flex min-h-screen bg-opacity-30 bg-[url(assets/featureimages/main-banner.jpg)] bg-no-repeat bg-center">
+        <div className="flex min-h-screen bg-opacity-30 bg-no-repeat bg-center"
+        style={{
+          backgroundImage: `url(${MainBanner})`,
+        }}>
           <div className="text-white w-3/6 grid content-center pl-8">
             <h1 className="font-extrabold text-7xl">New Age Of <br /> Modern Interior</h1>
             <p className="font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga facere minima voluptatibus temporibus! Laborum non, nisi fuga consequatur alias officia.</p>
@@ -156,7 +160,7 @@ function Home() {
                     <div id="slider" className="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
                       <Slide index={0}>
                         <div className="flex flex-shrink-0 relative w-full sm:w-auto">
-                          <img src="https://shorturl.at/bnsNU" alt="black chair and white table" className="object-cover object-center w-full" />
+                          <img src="./assets/featureimages/white-vase.jpg" alt="black chair and white table" className="object-cover object-center w-full" />
                           <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
                             <div className="flex h-full items-end pb-6">
                               <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">White Vase</h3>
@@ -166,40 +170,40 @@ function Home() {
                       </Slide>
                       <Slide index={1}>
                         <div className="flex flex-shrink-0 relative w-full sm:w-auto">
-                          <img src="https://shorturl.at/CKOQX" alt="sitting area" className="object-cover object-center w-full" />
+                          <img src="./assets/featureimages/ceramic-vase.jpg" alt="sitting area" className="object-cover object-center w-full" />
                           <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
                             <div className="flex h-full items-end pb-6">
-                              <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Glooming Creamic Vase</h3>
+                              <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white"> Creamic Vase</h3>
                             </div>
                           </div>
                         </div>
                       </Slide>
                       <Slide index={2}>
                         <div className="flex flex-shrink-0 relative w-full sm:w-auto">
-                          <img src="https://shorturl.at/jtMR7" alt="sitting area" className="object-cover object-center w-full" />
+                          <img src="./assets/featureimages/white-planter.jpg" alt="sitting area" className="object-cover object-center w-full" />
                           <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
                             <div className="flex h-full items-end pb-6">
-                              <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">White Polymer Planter</h3>
+                              <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Polymer Planter</h3>
                             </div>
                           </div>
                         </div>
                       </Slide>
                       <Slide index={3}>
                         <div className="flex flex-shrink-0 relative w-full sm:w-auto">
-                          <img src="https://shorturl.at/klwW4" alt="sitting area" className="object-cover object-center w-full" />
+                          <img src="./assets/featureimages/brown-planter.jpg" alt="sitting area" className="object-cover object-center w-full" />
                           <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
                             <div className="flex h-full items-end pb-6">
-                              <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Mud Brown Planter</h3>
+                              <h3 className="text-xl lg:text-xl font-semibold leading-5 lg:leading-6 text-white">Mud Brown Planter</h3>
                             </div>
                           </div>
                         </div>
                       </Slide>
                       <Slide index={4}>
                         <div className="flex flex-shrink-0 relative w-full sm:w-auto">
-                          <img src="https://shorturl.at/bCF49" alt="black chair and white table" className="object-cover object-center w-full" />
+                          <img src="./assets/featureimages/hanging-light.jpg" alt="black chair and white table" className="object-cover object-center w-full" />
                           <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
                             <div className="flex h-full items-end pb-6">
-                              <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">White Hanging Light</h3>
+                              <h3 className="text-xl lg:text-xl font-semibold leading-5 lg:leading-6 text-white">White Hanging Light</h3>
                             </div>
                           </div>
                         </div>
@@ -209,14 +213,14 @@ function Home() {
                           <img src="https://images.unsplash.com/photo-1568482077316-1896b28e05d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="sitting area" className="object-cover object-center w-full" />
                           <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
                             <div className="flex h-full items-end pb-6">
-                              <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Black Pendant Light</h3>
+                              <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Pendant Light</h3>
                             </div>
                           </div>
                         </div>
                       </Slide>
                       <Slide index={6}>
                         <div className="flex flex-shrink-0 relative w-full sm:w-auto">
-                          <img src="https://shorturl.at/MUX39" alt="sitting area" className="object-cover object-center w-full" />
+                          <img src="./assets/featureimages/study-lamp.jpg" alt="sitting area" className="object-cover object-center w-full" />
                           <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
                             <div className="flex h-full items-end pb-6">
                               <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Study Lamp</h3>
@@ -226,7 +230,7 @@ function Home() {
                       </Slide>
                       <Slide index={7}>
                         <div className="flex flex-shrink-0 relative w-full sm:w-auto">
-                          <img src="https://shorturl.at/qGKR8" alt="sitting area" className="object-cover object-center w-full" />
+                          <img src="./assets/featureimages/lamp-table.jpg" alt="sitting area" className="object-cover object-center w-full" />
                           <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
                             <div className="flex h-full items-end pb-6">
                               <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Table Lamp</h3>
@@ -236,40 +240,40 @@ function Home() {
                       </Slide>
                       <Slide index={8}>
                         <div className="flex flex-shrink-0 relative w-full sm:w-auto">
-                          <img src="https://shorturl.at/fozKU" alt="black chair and white table" className="object-cover object-center w-full" />
+                          <img src="./assets/featureimages/wooden-frame.jpg" alt="black chair and white table" className="object-cover object-center w-full" />
                           <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
                             <div className="flex h-full items-end pb-6">
-                              <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Wooden Gallery Frame</h3>
+                              <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Wooden Frame</h3>
                             </div>
                           </div>
                         </div>
                       </Slide>
                       <Slide index={9}>
                         <div className="flex flex-shrink-0 relative w-full sm:w-auto">
-                          <img src="https://shorturl.at/gjyFY" alt="sitting area" className="object-cover object-center w-full" />
+                          <img src="./assets/featureimages/white-frames.jpg" alt="sitting area" className="object-cover object-center w-full" />
                           <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
                             <div className="flex h-full items-end pb-6">
-                              <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">White Potrait Frame</h3>
+                              <h3 className="text-xl lg:text-xl font-semibold leading-5 lg:leading-6 text-white">White Potrait Frame</h3>
                             </div>
                           </div>
                         </div>
                       </Slide>
                       <Slide index={10}>
                         <div className="flex flex-shrink-0 relative w-full sm:w-auto">
-                          <img src="https://shorturl.at/jtyMR" alt="sitting area" className="object-cover object-center w-full" />
+                          <img src="./assets/featureimages/man-figurine.jpg" alt="sitting area" className="object-cover object-center w-full" />
                           <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
                             <div className="flex h-full items-end pb-6">
-                              <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Brown Metal Mirror</h3>
+                              <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white"> Man Firgurine</h3>
                             </div>
                           </div>
                         </div>
                       </Slide>
                       <Slide index={11}>
                         <div className="flex flex-shrink-0 relative w-full sm:w-auto">
-                          <img src="https://images.pexels.com/photos/6186523/pexels-photo-6186523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="sitting area" className="object-cover object-center w-full" />
+                          <img src="./assets/featureimages/circluar-mirror.jpg" alt="sitting area" className="object-cover object-center w-full" />
                           <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
                             <div className="flex h-full items-end pb-6">
-                              <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Brown Aluminium Mirror</h3>
+                              <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Aluminium Mirror</h3>
                             </div>
                           </div>
                         </div>
