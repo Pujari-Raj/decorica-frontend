@@ -1,12 +1,15 @@
 import './App.css'
-import Test from './test'
 
 function App() {
 
   return (
     <>
-      {/* <h1>Vite + React</h1> */}
-      <Test/>
+      <h1 className='font-MontThin'>Vite + React</h1>
+      <h1 className='font-MontExtraLight'>Vite + React</h1>
+      <h1 className='font-MontLight'>Vite + React</h1>
+      <h1 className='font-MontRegular'>Vite + React</h1>
+      <h1 className='font-MontExtraLight'>Vite + React</h1>
+      <h1 className='font-MontSemiBold'>Vite + React</h1>
     </>
   )
 }
