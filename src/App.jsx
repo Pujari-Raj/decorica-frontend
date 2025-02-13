@@ -1,15 +1,14 @@
-import './App.css'
+import { BrowserRouter } from 'react-router-dom';
+import './App.css';
+import Layout from './Layout/Layout'
 
 function App() {
 
   return (
     <>
-      <h1 className='font-MontThin text-3xl'>Vite + React</h1>
-      <h1 className='font-MontExtraLight'>Vite + React</h1>
-      <h1 className='font-MontLight'>Vite + React</h1>
-      <h1 className='font-MontRegular'>Vite + React</h1>
-      <h1 className='font-MontExtraLight'>Vite + React</h1>
-      <h1 className='font-MontSemiBold'>Vite + React</h1>
+      <BrowserRouter>
+      <Layout/>
+      </BrowserRouter>
     </>
   )
 }
