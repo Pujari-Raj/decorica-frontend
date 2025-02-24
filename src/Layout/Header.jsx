@@ -104,7 +104,7 @@ const Header = () => {
                 <Link
                   //   to={auth.accessToken ? "/" : "/login"}
                   //   onClick={auth.accessToken && handleLogout}
-                  className="bg-gray-500 text-slate-100 p-2 pt-3 rounded-md font-bold hover:text-white hover:bg-gray-600"
+                  className="bg-gray-500 text-slate-100 px-[1.15rem] py-2 rounded-md font-bold hover:text-white hover:bg-gray-600"
                 >
                   {/* {!auth.accessToken ? "Login" : "Logout"} */}
                   Login
