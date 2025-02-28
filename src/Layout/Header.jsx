@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Heart, ShoppingCart, CircleUserRound } from "lucide-react";
+import NavLinks from "./NavLinks";
+import { ROUTES_ARR } from "../constants/globalConstants";
+import UserActions from "./UserActions";
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState("");
@@ -27,26 +29,15 @@ const Header = () => {
                 />
               </a>
             </div>
-            <div className="hidden sm:block sm:ml-6">
-              <div className="flex space-x-4">
-                {/* {ROUTES_ARR.map((item) => {
-                  return (
-                    <Link
-                      key={item.path}
-                      to={item.path}
-                      className={`text-black hover:text-gray-500 hover:font-semibold px-3 py-2 uppercase ${
-                        activeLink === item.path && "text-gray-500 font-bold"
-                      }`}
-                      onClick={() => handleLinkClick(item.path)}
-                    >
-                      {item.name}
-                    </Link>
-                  );
-                })} */}
-              </div>
-            </div>
 
-            {/* WishList,Cart,Profile,*/}
+            {/* Navlinks */}
+            <NavLinks
+              activeLink={activeLink}
+              routes={ROUTES_ARR}
+              handleLinkClick={handleLinkClick}
+            />
+
+            {/*UserActions*/}
             <div className="flex gap-x-10">
               <Link
                 to="/admin-dashboard/login"
@@ -62,54 +53,16 @@ const Header = () => {
               >
                 Become a seller
               </Link>
-              <div className="flex gap-x-6">
-                {/* WishList */}
-                <Link
-                  key="1"
-                  to="/wishlist"
-                  className={` text-black hover:text-gray-500 
-              hover:font-semibold  py-2 uppercase`}
-                >
-                  <Heart
-                    className="block  text-[25px] font-[800]  pb-0 
-               text-gray-500 transition-colors"
-                  />
-                </Link>
-                {/* Cart */}
-                <Link
-                  key="2"
-                  to="/cart"
-                  className={`text-black hover:text-gray-500 
-              hover:font-semibold  py-2 uppercase`}
-                >
-                  <ShoppingCart
-                    className="block text-[30px] font-[200]  pb-0 
-               text-gray-500 transition-colors"
-                  />
-                </Link>
 
-                {/*Profile */}
-                <Link
-                  key="3"
-                  to="/profile"
-                  className={`text-black hover:text-gray-500 hover:font-semibold py-2 uppercase`}
-                  // onClick={() => handleLinkClick(item.path)}
-                >
-                  <CircleUserRound
-                    className="block text-[30px] font-[200]  pb-0 
-               text-gray-500 hover:text-gray-600 transition-colors"
-                  />
-                </Link>
-
-                <Link
-                  //   to={auth.accessToken ? "/" : "/login"}
-                  //   onClick={auth.accessToken && handleLogout}
-                  className="bg-gray-500 text-slate-100 px-[1.15rem] py-2 rounded-md font-bold hover:text-white hover:bg-gray-600"
-                >
-                  {/* {!auth.accessToken ? "Login" : "Logout"} */}
-                  Login
-                </Link>
-              </div>
+              <UserActions />
+              <Link
+                //   to={auth.accessToken ? "/" : "/login"}
+                //   onClick={auth.accessToken && handleLogout}
+                className="bg-gray-500 text-slate-100 px-[1.15rem] py-2 rounded-md font-bold hover:text-white hover:bg-gray-600"
+              >
+                {/* {!auth.accessToken ? "Login" : "Logout"} */}
+                Login
+              </Link>
             </div>
           </div>
         </div>
