@@ -1,6 +1,12 @@
+// import Home from "../pages/Home/Home";
+
+import React from "react";
+
+const Home = React.lazy(() => import("../pages/Home/Home"));
+
 export const ROUTES_ARR  = [
-    { name: "Home", path: "/" },
-    { name: "Shop", path: "/shop" },
-    { name: "Blog", path: "/blog" },
-    { name: "FAQs", path: "/faqs" },
+    { name: "Home", component: Home, path: "/" },
+    { name: "Shop", component: "", path: "/shop" },
+    { name: "Blog", component: "", path: "/blog" },
+    { name: "FAQs", component: "", path: "/faqs" },
 ]

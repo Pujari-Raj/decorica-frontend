@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {Icons} from '../components/Icons'
-import { Icon } from 'lucide-react';
+import {Icons} from '../Icons/Icons'
 
 const UserActions = () => {
   return (
