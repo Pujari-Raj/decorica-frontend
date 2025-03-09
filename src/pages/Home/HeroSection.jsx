@@ -1,5 +1,4 @@
 import React from "react";
-import { ArrowRightIcon } from "../../Icons/Icons";
 import MainBanner from "../../../public/assets/featuredImages/main-banner.jpg";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
