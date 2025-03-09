@@ -10,3 +10,27 @@ export const ROUTES_ARR  = [
     { name: "Blog", component: "", path: "/blog" },
     { name: "FAQs", component: "", path: "/faqs" },
 ]
+
+export const ABOUT_ROUTES = [
+    { name: "Company", component: "", path: "/" },
+    { name: "Careers", component: "", path: "/" },
+    { name: "Blogs", component: "", path: "/blog" },  
+]
+
+export const SUPPORT_ROUTES = [
+    { name: "Contact Support", component: "", path: "/" },
+    { name: "Help Resources", component: "", path: "/" },
+    { name: "Release Updates", component: "", path: "/" },  
+]
+
+export const PLATFORM_ROUTES = [
+    { name: "Terms & Privacy", component: "", path: "/" },
+    { name: "Pricing", component: "", path: "/" },
+    { name: "FAQ", component: "", path: "/" },  
+]
+
+export const CONTACT_ROUTES = [
+    { name: "Send a Message", component: "", path: "/" },
+    { name: "Request a Quote", component: "", path: "/" },
+    { name: "+123-456-7890", component: "", path: "/" },  
+]
