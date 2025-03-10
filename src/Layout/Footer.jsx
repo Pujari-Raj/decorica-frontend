@@ -20,13 +20,13 @@ const Footer = () => {
               {/* Socials */}
               <div className="mt-4">
                 <span className="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start">
-                  <a className="text-gray-500 cursor-pointer hover:text-gray-700">
+                  <a className="text-gray-500 cursor-pointer hover:text-[#316FF6]">
                     <FacebookIcon/>
                   </a>
-                  <a className="ml-3 text-gray-500 cursor-pointer hover:text-gray-700">
+                  <a className="ml-3 text-gray-500 cursor-pointer hover:text-[#1DA1F2]">
                     <TwiiterIcon/>
                   </a>
-                  <a className="ml-3 text-gray-500 cursor-pointer hover:text-gray-700">
+                  <a className="ml-3 text-gray-500 cursor-pointer hover:text-red-600">
                     <InstagramIcon/>
                   </a>
                 </span>
