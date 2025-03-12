@@ -3,6 +3,7 @@ import HeroSection from './HeroSection'
 import ProductCategories from './ProductCategories'
 import MostWanted from './Mostwanted'
 import OurClients from './OurClients'
+import NewArrivals from './NewArrivals'
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
         <HeroSection/>
         <ProductCategories/>
         <MostWanted/>
+        <NewArrivals/>
         <OurClients/>
     </>
   )
