@@ -12,7 +12,7 @@ const HeroSection = () => {
       }}
     >
       <div className="text-white w-3/6 absolute left-[50px] top-[90px] content-center pl-8">
-        <h1 className=" font-MontRegular text-7xl">
+        <h1 className=" font-MontMedium text-7xl">
           New Age Of <br /> Modern Interior
         </h1>
         <p className="font-MontRegular my-4">

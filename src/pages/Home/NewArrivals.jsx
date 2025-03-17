@@ -8,7 +8,7 @@ const slides = [
   { src: "./assets/featuredImages/white-planter.jpg", alt: "Polymer Planter" },
   {
     src: "./assets/featuredImages/brown-planter.jpg",
-    alt: "Mud Brown Planter",
+    alt: "Wooden Planter",
   },
   {
     src: "./assets/featuredImages/hanging-light.jpg",
@@ -37,9 +37,9 @@ const extendedSlides = [
   slides[0],
   slides[1],
   slides[2],
-  slides[3], 
+  slides[3],
   slides[4],
-  slides[5]
+  slides[5],
 ];
 
 const NewArrivals = () => {
@@ -50,7 +50,7 @@ const NewArrivals = () => {
     const intervalId = setInterval(() => {
       setCurrentSlide((prevSlide) => {
         if (prevSlide >= slides.length - 1) {
-          // Handling the special case of the last slide          
+          // Handling the special case of the last slide
           setIsTransitioning(true);
           // Returning next slide in the duplicated section
           return prevSlide + 1;
