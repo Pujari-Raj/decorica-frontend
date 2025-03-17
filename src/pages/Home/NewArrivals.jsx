@@ -32,7 +32,6 @@ const slides = [
   },
 ];
 
-// Add duplicates of the first few slides at the end to create a seamless transition
 const extendedSlides = [
   ...slides,
   slides[0],
@@ -47,25 +46,16 @@ const NewArrivals = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  console.log("currentSlide",currentSlide);
-  
-
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentSlide((prevSlide) => {
-        // When we reach the duplicated slides, quickly reset to the beginning
         if (prevSlide >= slides.length - 1) {
-          // Handle the special case of the last slide
-          console.log('inside-useffect-1-if');
-          
+          // Handling the special case of the last slide          
           setIsTransitioning(true);
-          // Return next slide in the duplicated section
+          // Returning next slide in the duplicated section
           return prevSlide + 1;
         } else if (prevSlide >= slides.length + 3) {
-          // If we've gone through all duplicates, jump back to start
-          // This should happen instantly without animation
-          console.log('inside-useffect-1-else');
-          
+          // Checking If we've gone through all duplicates, jump back to start
           return 0;
         }
         return prevSlide + 1;
@@ -78,12 +68,12 @@ const NewArrivals = () => {
   // Handle reset to first slide when we finish showing duplicates
   useEffect(() => {
     if (currentSlide >= slides.length + 3) {
-      // Wait a bit to ensure the transition has finished visually
+      // Waiting for a bit to ensure the transition has finished visually
       const resetTimeout = setTimeout(() => {
         setIsTransitioning(true);
         setCurrentSlide(0);
 
-        // After resetting, allow transitions again
+        // After resetting, allowing transitions again
         const transitionTimeout = setTimeout(() => {
           setIsTransitioning(false);
         }, 50);
@@ -93,7 +83,7 @@ const NewArrivals = () => {
 
       return () => clearTimeout(resetTimeout);
     } else if (isTransitioning && currentSlide < slides.length) {
-      // Once we're back to a normal slide and were transitioning, allow transitions again
+      // Once we're back to a normal slide and were transitioning, allowing transitions again
       const transitionTimeout = setTimeout(() => {
         setIsTransitioning(false);
       }, 50);
@@ -101,14 +91,6 @@ const NewArrivals = () => {
       return () => clearTimeout(transitionTimeout);
     }
   }, [currentSlide, isTransitioning]);
-
-  // Preload images to avoid blank transitions
-  useEffect(() => {
-    extendedSlides.forEach((slide) => {
-      const img = new Image();
-      img.src = slide.src;
-    });
-  }, []);
 
   return (
     <div className="ml-4">
