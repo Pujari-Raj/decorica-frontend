@@ -1,6 +1,6 @@
 import React from "react";
 import { FacebookIcon, InstagramIcon, TwiiterIcon } from "../Icons/Icons";
-import { ABOUT_ROUTES, CONTACT_ROUTES, PLATFORM_ROUTES, SUPPORT_ROUTES } from "../constants/globalConstants";
+import { ABOUT_ROUTES, HELP_ROUTES, PLATFORM_ROUTES, SUPPORT_ROUTES } from "../constants/globalConstants";
 import FooterNavSection from "./FooterNavSection";
 
 const Footer = () => {
@@ -36,7 +36,7 @@ const Footer = () => {
               <FooterNavSection title="About" links={ABOUT_ROUTES} />
               <FooterNavSection title="Support" links={SUPPORT_ROUTES} />
               <FooterNavSection title="Platform" links={PLATFORM_ROUTES} />
-              <FooterNavSection title="Contact" links={CONTACT_ROUTES} />
+              <FooterNavSection title="Need Help" links={HELP_ROUTES} />
             </div>
           </div>
           <div className="bg-gray-300">

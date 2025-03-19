@@ -7,8 +7,8 @@ const Home = React.lazy(() => import("../pages/Home/Home"));
 export const ROUTES_ARR  = [
     { name: "Home", component: Home, path: "/" },
     { name: "Shop", component: "", path: "/shop" },
-    { name: "Blog", component: "", path: "/blog" },
-    { name: "FAQs", component: "", path: "/faqs" },
+    // { name: "Blog", component: "", path: "/blog" },
+    // { name: "FAQs", component: "", path: "/faqs" },
 ]
 
 export const ABOUT_ROUTES = [
@@ -26,11 +26,10 @@ export const SUPPORT_ROUTES = [
 export const PLATFORM_ROUTES = [
     { name: "Terms & Privacy", component: "", path: "/" },
     { name: "Pricing", component: "", path: "/" },
-    { name: "FAQ", component: "", path: "/" },  
 ]
 
-export const CONTACT_ROUTES = [
+export const HELP_ROUTES = [
     { name: "Send a Message", component: "", path: "/" },
     { name: "Request a Quote", component: "", path: "/" },
-    { name: "+123-456-7890", component: "", path: "/" },  
+    { name: "FAQs", component: "", path: "/" },   
 ]

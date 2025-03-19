@@ -9,8 +9,8 @@ const NavLinks = ({activeLink, handleLinkClick, routes}) => {
                 <Link
                 key={route.path}
                 to={route.path}
-                className={`text-black hover:text-gray-500  hover:font-MontMedium px-3 py-2 ${
-                    activeLink === route.path ? "text-gray-500 font-MontSemiBold" : "font-MontRegular"
+                className={`text-black hover:text-gray-500 font-MontMedium font-semibold hover:font-MontSemiBold px-3 py-2 ${
+                    activeLink === route.path ? "text-gray-500 font-MontBold font-black" : "font-MontRegular"
                   }`}
                 onClick={() => handleLinkClick(route.path)}
                 >
