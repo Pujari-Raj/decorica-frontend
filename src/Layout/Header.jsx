@@ -15,6 +15,9 @@ const Header = () => {
     setActiveLink(path);
   };
 
+  console.log("activeLink",activeLink);
+  
+
   return (
     <nav className="w-full">
       <div className="w-full mx-auto px-2 sm:px-6 lg:px-8 ">
@@ -39,13 +42,13 @@ const Header = () => {
 
             {/*UserActions*/}
             <div className="flex gap-x-10">
-              <Link
+              {/* <Link
                 to="/admin-dashboard/login"
                 target="_blank"
                 className="bg-gray-500 text-slate-100 pt-[0.65rem] pb-[0.3rem] px-[0.85rem] rounded-md font-MontSemiBold hover:text-white hover:bg-gray-600"
               >
                 Admin
-              </Link>
+              </Link> */}
               <Link
                 to="/seller-dashboard/login"
                 target="_blank"
