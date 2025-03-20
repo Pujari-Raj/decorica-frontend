@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Blog = () => {
   return (
@@ -7,10 +7,12 @@ const Blog = () => {
       <p className="font-semibold text-gray-800 capitalize hover:text-gray-700 text-[2.65rem]">
         {/* Blog Posts */}
       </p>
-      <p className="font-MontSemiBold font-semibold text-[2rem] text-gray-600">The Decorica Journal</p>
+      <p className="font-MontSemiBold font-semibold text-[2rem] text-gray-600">
+        The Decorica Journal
+      </p>
     </div>
-//   </header>
-  )
-}
+    //   </header>
+  );
+};
 
-export default Blog
+export default Blog;
