@@ -11,7 +11,7 @@ const HeroSection = () => {
         backgroundImage: `url(${MainBanner})`,
       }}
     >
-      <div className="text-white w-3/6 absolute left-[50px] top-[140px] content-center pl-8">
+      <div className="text-white w-3/6 absolute left-[24px] top-[140px] content-center pl-8">
         <h1 className=" font-MontMedium text-6xl">
           New Age Of <br /> Modern Interior
         </h1>
