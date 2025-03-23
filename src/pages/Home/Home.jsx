@@ -1,7 +1,7 @@
 import React from 'react'
 import HeroSection from './HeroSection'
 import ProductCategories from './ProductCategories'
-import MostWanted from './Mostwanted'
+import MostWanted from './MostWanted'
 import OurClients from './OurClients'
 import NewArrivals from './NewArrivals'
 
