@@ -1,11 +1,11 @@
 import { ArrowRightIcon } from "../../Icons/Icons";
 
 export const BlogCard = ({ title, description, image }) => (
-    <article className="flex flex-col shadow my-4 rounded-md">
+    <article className="flex flex-col shadow my-4 rounded-xl">
       <a href="#" className="hover:opacity-75">
         <img className="w-full" src={image} alt={title} />
       </a>
-      <div className="bg-white flex flex-col justify-start p-6">
+      <div className="rounded-xl bg-white flex flex-col justify-start p-6">
         <p className="text-xl font-semibold pb-4 font-MontMedium">{title}</p>
         <p className="pb-6 font-MontMedium">{description}</p>
         <a
