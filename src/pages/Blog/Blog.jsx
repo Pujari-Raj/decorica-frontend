@@ -1,7 +1,43 @@
 import React from "react";
 import { BlogCard } from "./BlogCard";
+import PopularBlogCard from "./PopularBlogCard";
 
 const blogPosts = [
+  {
+    id: 1,
+    title: "Best balcony decoration ideas that will transform your outside space",
+    description:
+      "Do you feel like a boy in front of a candy store whenever you look at someone tending to their immaculate home garden full of hibiscus and petunias while the .....",
+    image:
+      "https://images.unsplash.com/photo-1621045081424-97aa08903f76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJhbGNvbnl8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=600&q=60",
+  },
+  {
+    id: 2,
+    title: "Traditional Decor Ideas for your Living Room",
+    description:
+      "European styles and conventional notions of what a home looks like. Timeless, comfortable and put together without being stuffy, traditional living rooms.......",
+    image:
+      "https://images.unsplash.com/photo-1621045081424-97aa08903f76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJhbGNvbnl8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=600&q=60",
+  },
+  {
+    id: 3,
+    title: "Best lighting solution for your home to light up your room decor",
+    description:
+      "To uplight a room, you can rely on the three types oflighting - ambient lighting, accent lighting and task lighting. Ambient lighting provides overall illumination.......",
+    image:
+      "https://images.unsplash.com/photo-1621045081424-97aa08903f76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJhbGNvbnl8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=600&q=60",
+  },
+  {
+    id: 4,
+    title: "Best lighting solution for your home to light up your room decor",
+    description:
+      "To uplight a room, you can rely on the three types oflighting - ambient lighting, accent lighting and task lighting. Ambient lighting provides overall illumination.......",
+    image:
+      "https://images.unsplash.com/photo-1621045081424-97aa08903f76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJhbGNvbnl8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=600&q=60",
+  }
+];
+
+const popularBlogPosts = [
   {
     id: 1,
     title: "Best balcony decoration ideas that will transform your outside space",
@@ -101,7 +137,7 @@ const Blog = () => {
       </div>
       {/* container */}
       <div className="">
-        <div className="m-8">
+        <div className="p-8 flex gap-3 ">
           {/* <section className="w-full md:w-2/3 flex flex-col items-center px-3"> */}
           <div className="grid grid-cols-2 mt-4 gap-6 w-[70%]">
             {blogPosts.map((key, index)=> (
@@ -109,6 +145,23 @@ const Blog = () => {
             ))}
           </div>
           {/* </section> */}
+          <div className="p-4 mt-8 rounded-md w-[30%] h-max shadow-md bg-gray-50">
+            <h5 className="font-MontRegular font-extrabold mb-[13px] pb-[13px] border-b-[rgb(209,209,209)] border-b border-solid">Popular Blogs</h5>
+            {/* add horizontal line after h5  */}
+            <div className="flex flex-col">
+              {popularBlogPosts.map((blog, index) => (
+                // <div className="flex gap-2 mb-2 cursor-pointer border-b border-gray-300 last:border-b-0 pb-2">
+                //   <div className="w-[30%]">
+                //   <img src={blog?.image} className="w-[90px] h-[60px]" alt={blog?.title} />
+                //   </div>
+                //   <div className="w-[70%]">
+                //   <p className="pb-6 font-MontRegular text-sm/4 text-[#333333]">{blog?.title}</p>
+                //   </div>
+                // </div>
+                <PopularBlogCard key={blog.id} title={blog.title} image={blog.image} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </>
