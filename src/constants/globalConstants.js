@@ -4,12 +4,13 @@ import React from "react";
 
 const Home = React.lazy(() => import("../pages/Home/Home"));
 const Blog = React.lazy(() => import("../pages/Blog/Blog"));
+const Faq = React.lazy(() => import("../pages/Faq/Faq"))
 
 export const ROUTES_ARR = [
   { name: "Home", component: Home, path: "/" },
   { name: "Shop", component: "", path: "/shop" },
   { name: "Blog", component: Blog, path: "/blog" },
-  // { name: "FAQs", component: "", path: "/faqs" },
+  { name: "FAQs", component: Faq, path: "/faqs" },
 ];
 
 export const ABOUT_ROUTES = [
