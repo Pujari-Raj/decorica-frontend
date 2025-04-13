@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import NavLinks from "./NavLinks";
-import { ROUTES_ARR } from "../constants/globalConstants";
+import { ROUTES_ARR } from "../utils/constants/globalConstants";
 import UserActions from "./UserActions";
 
 const Header = () => {

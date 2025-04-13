@@ -1,6 +1,6 @@
 import React from "react";
 import { FacebookIcon, InstagramIcon, TwiiterIcon } from "../Icons/Icons";
-import { ABOUT_ROUTES, HELP_ROUTES, PLATFORM_ROUTES, SUPPORT_ROUTES } from "../constants/globalConstants";
+import { ABOUT_ROUTES, HELP_ROUTES, PLATFORM_ROUTES, SUPPORT_ROUTES } from "../utils/constants/globalConstants";
 import FooterNavSection from "./FooterNavSection";
 
 const Footer = () => {

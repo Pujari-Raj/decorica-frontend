@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Layout from "./Layout/Layout";
-import { ROUTES_ARR } from "./constants/globalConstants";
+import { ROUTES_ARR } from "./utils/constants/globalConstants";
 import { Suspense } from "react";
 
 function App() {
