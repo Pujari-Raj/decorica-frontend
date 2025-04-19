@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { FacebookIcon, InstagramIcon, TwiiterIcon } from "../Icons/Icons";
 import { ABOUT_ROUTES, HELP_ROUTES, PLATFORM_ROUTES, SUPPORT_ROUTES } from "../utils/constants/globalConstants";
 import FooterNavSection from "./FooterNavSection";
 
 const Footer = () => {
+
+  const [activeLink, setActiveLink] = useState("");
+  //
+  const handleLinkClick = (path) => {
+    console.log("path",path);
+    
+    setActiveLink(path);
+  };
+
+  console.log("activeLink", activeLink);
+
   return (
     <>
       <div className="flex items-end w-full bg-white">
@@ -33,7 +44,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="flex flex-wrap flex-grow mt-10 text-center md:pl-20 md:mt-0 md:text-left">
-              <FooterNavSection title="About" links={ABOUT_ROUTES} />
+              <FooterNavSection title="About" links={ABOUT_ROUTES} handleLinkClick={handleLinkClick} activeLink={activeLink} />
               <FooterNavSection title="Support" links={SUPPORT_ROUTES} />
               <FooterNavSection title="Platform" links={PLATFORM_ROUTES} />
               <FooterNavSection title="Need Help" links={HELP_ROUTES} />
