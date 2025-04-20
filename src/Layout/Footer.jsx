@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import { FacebookIcon, InstagramIcon, TwiiterIcon } from "../Icons/Icons";
-import { ABOUT_ROUTES, HELP_ROUTES, PLATFORM_ROUTES, SUPPORT_ROUTES } from "../utils/constants/globalConstants";
+import {
+  ABOUT_ROUTES,
+  HELP_ROUTES,
+  PLATFORM_ROUTES,
+  SUPPORT_ROUTES,
+} from "../utils/constants/globalConstants";
 import FooterNavSection from "./FooterNavSection";
 
 const Footer = () => {
-
   const [activeLink, setActiveLink] = useState("");
   //
   const handleLinkClick = (path) => {
-    console.log("path",path);
-    
     setActiveLink(path);
   };
-
-  console.log("activeLink", activeLink);
 
   return (
     <>
@@ -32,19 +32,24 @@ const Footer = () => {
               <div className="mt-4">
                 <span className="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start">
                   <a className="text-gray-500 cursor-pointer hover:text-[#316FF6]">
-                    <FacebookIcon/>
+                    <FacebookIcon />
                   </a>
                   <a className="ml-3 text-gray-500 cursor-pointer hover:text-[#1DA1F2]">
-                    <TwiiterIcon/>
+                    <TwiiterIcon />
                   </a>
                   <a className="ml-3 text-gray-500 cursor-pointer hover:text-red-600">
-                    <InstagramIcon/>
+                    <InstagramIcon />
                   </a>
                 </span>
               </div>
             </div>
             <div className="flex flex-wrap flex-grow mt-10 text-center md:pl-20 md:mt-0 md:text-left">
-              <FooterNavSection title="About" links={ABOUT_ROUTES} handleLinkClick={handleLinkClick} activeLink={activeLink} />
+              <FooterNavSection
+                title="About"
+                links={ABOUT_ROUTES}
+                handleLinkClick={handleLinkClick}
+                activeLink={activeLink}
+              />
               <FooterNavSection title="Support" links={SUPPORT_ROUTES} />
               <FooterNavSection title="Platform" links={PLATFORM_ROUTES} />
               <FooterNavSection title="Need Help" links={HELP_ROUTES} />
