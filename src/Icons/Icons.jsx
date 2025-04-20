@@ -1,9 +1,14 @@
-import { Heart, ShoppingCart, CircleUserRound } from "lucide-react";
+import { Heart, ShoppingCart, CircleUserRound, Store,ChevronDown, ChevronUp, User,LogOut } from "lucide-react";
 
 export const Icons = {
   Wishlist: Heart,
   Cart: ShoppingCart,
   Profile: CircleUserRound,
+  Seller: Store,
+  ChevronUp: ChevronUp,
+  ChevronDown: ChevronDown,
+  User: User,
+  LogOut: LogOut
 };
 
 export const FacebookIcon = ({}) => (
