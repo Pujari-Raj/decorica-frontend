@@ -4,19 +4,19 @@ import React from "react";
 
 const Home = React.lazy(() => import("../../pages/Home/Home"));
 const Blog = React.lazy(() => import("../../pages/Blog/Blog"));
-const Faq = React.lazy(() => import("../../pages/Faq/Faq"))
+const Faq = React.lazy(() => import("../../pages/Faq/Faq"));
 
 export const ROUTES_ARR = [
   { name: "Home", component: Home, path: "/" },
   { name: "Shop", component: "", path: "/shop" },
-  { name: "Blog", component: Blog, path: "/blog" },
-  { name: "FAQs", component: Faq, path: "/faqs" },
+  // { name: "", component: Blog, path: "/blog" },
+  // { name: "FAQs", component: Faq, path: "/faqs" },
 ];
 
 export const ABOUT_ROUTES = [
   { name: "Company", component: "", path: "/" },
   { name: "Careers", component: "", path: "/" },
-  { name: "Blogs", component: "", path: "/blog" },
+  { name: "Blogs", component: Blog, path: "/blog" },
 ];
 
 export const SUPPORT_ROUTES = [
@@ -33,8 +33,16 @@ export const PLATFORM_ROUTES = [
 export const HELP_ROUTES = [
   { name: "Send a Message", component: "", path: "/" },
   { name: "Request a Quote", component: "", path: "/" },
-  { name: "FAQs", component: "", path: "/" },
+  { name: "FAQs", component: Faq, path: "/faqs" },
 ];
+
+export const MERGED_ROUTES = [
+  ...ROUTES_ARR,
+  ...ABOUT_ROUTES,
+  ...SUPPORT_ROUTES,
+  ...PLATFORM_ROUTES,
+  ...HELP_ROUTES,
+].filter((route) => route.component);
 
 // function for filtering class
 export function cn(...classes) {
