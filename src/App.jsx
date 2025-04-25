@@ -1,8 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Layout from "./Layout/Layout";
-import { ROUTES_ARR } from "./utils/constants/globalConstants";
+import { MERGED_ROUTES, ROUTES_ARR } from "./utils/constants/globalConstants";
 import { Suspense } from "react";
+
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Layout>
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
-              {ROUTES_ARR.map((item, index) =>(
+              {MERGED_ROUTES.map((item, index) =>(
                 // item?.component ? (
                 //   <Route
                 //     key={index}
