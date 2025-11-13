@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const FooterNavSection = ({ title, links,handleLinkClick, activeLink }) => {
 
-  console.log("links",links);
+  // console.log("links",links);
   
   return (
     <>
