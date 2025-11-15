@@ -4,13 +4,14 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        MontThin: ["Montserrat Thin"],
-        MontExtraLight: ["Montserrat ExtraLight"],
-        MontLight: ["Montserrat Light"],
-        MontRegular: ["Montserrat Regular"],
-        MontMedium:["Montserrat Medium"],
-        MontSemiBold:["Montserrat SemiBold"],
-        MontBold: ["Montserrat Bold"],
+        mont: ["Montserrat", "sans-serif"], // default
+        MontThin: ["Montserrat Thin", "sans-serif"],
+        MontExtraLight: ["Montserrat ExtraLight", "sans-serif"],
+        MontLight: ["Montserrat Light", "sans-serif"],
+        MontRegular: ["Montserrat Regular", "sans-serif"],
+        MontMedium: ["Montserrat Medium", "sans-serif"],
+        MontSemiBold: ["Montserrat SemiBold", "sans-serif"],
+        MontBold: ["Montserrat Bold", "sans-serif"],
       },
     },
   },
