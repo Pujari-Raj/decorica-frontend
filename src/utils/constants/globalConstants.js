@@ -5,14 +5,19 @@ import React from "react";
 const Home = React.lazy(() => import("../../pages/Home/Home"));
 const Blog = React.lazy(() => import("../../pages/Blog/Blog"));
 const Faq = React.lazy(() => import("../../pages/Faq/Faq"));
-const Login = React.lazy(() => import("../../pages/Auth/Login"));
+const AuthForm = React.lazy(() => import("../../pages/Auth/AuthForm"));
 
 export const ROUTES_ARR = [
   { name: "Home", component: Home, path: "/" },
   { name: "Shop", component: "", path: "/shop" },
-  {nam: "Login", component: Login, path: "/login"},
+  // {name: "Login", component: Login, path: "/login"},
+  // {name: "AuthForm", component: AuthForm, path: "/authform"}
   // { name: "", component: Blog, path: "/blog" },
   // { name: "FAQs", component: Faq, path: "/faqs" },
+];
+
+export const HIDDEN_ROUTES = [
+  { name: "AuthForm", component: AuthForm, path: "/auth" },
 ];
 
 export const ABOUT_ROUTES = [
@@ -44,6 +49,7 @@ export const MERGED_ROUTES = [
   ...SUPPORT_ROUTES,
   ...PLATFORM_ROUTES,
   ...HELP_ROUTES,
+  ...HIDDEN_ROUTES
 ].filter((route) => route.component);
 
 // function for filtering class

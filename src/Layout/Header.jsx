@@ -153,7 +153,7 @@ const Header = () => {
                       </div>
                       <Link
                         // onClick={() => setIsLoggedIn(true)}
-                        to="/login"
+                        to="/auth?mode=login"
                         className="block text-center bg-[#f15c33] hover:bg-[linear-gradient(180deg,#f15c33_0%,#e6441a_100%)] text-white font-medium text-sm uppercase font-MontMedium rounded focus:outline-none border-2 border-transparent transition-colors duration-500 
                         cursor-pointer px-4 py-3 mt-4"
                       >
