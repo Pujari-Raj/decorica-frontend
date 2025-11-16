@@ -1,26 +1,32 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Eye, EyeOff } from "lucide-react";
-import { useSearchParams, useNavigate, Link } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 
 const AuthForm = () => {
   // getting params
   const [searchParams] = useSearchParams();
   const mode = searchParams.get("mode") || "login";
-  console.log("mode", mode);
-
-  const navigate = useNavigate();
-
+  
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors, isSubmitting },
   } = useForm();
+
+  const password = watch("password");
 
   const onSubmit = (data) => {
     console.log("login data", data);
   };
+
+  // console.log('errors',errors);
+  // console.log('values',watch());
+  
 
   return (
     <>
@@ -44,7 +50,7 @@ const AuthForm = () => {
                   <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-1 md:mb-2">
                     {mode === "login"
                       ? "Welcome Back 👋"
-                      : "Create Your Account ✨"}
+                      : "Create An Account ✨"}
                   </h1>
                   <p className="text-xs sm:text-sm md:text-base text-gray-600">
                     Sign in to your account to continue
@@ -134,6 +140,52 @@ const AuthForm = () => {
                       </p>
                     )}
                   </div>
+
+                  {/* Confirm Password */}
+
+                  {mode === "register" && (
+                    <div>
+                      <label
+                        htmlFor="confirmPassword"
+                        className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 md:mb-2"
+                      >
+                       Confirm Password
+                      </label>
+                      <div className="relative">
+                        <input
+                          id="password"
+                          type={showConfirmPassword ? "text" : "password"}
+                          placeholder="Re-enter your password"
+                          {...register("confirmPassword", {
+                            required: "Confirm Password is required",
+                            validate: (value) => value === password || "Password and Confirm Password do not match"
+                          })}
+                          className={`w-full px-3 sm:px-4 py-2 md:py-3 pr-10 sm:pr-12 border rounded-lg text-sm sm:text-base text-gray-900 placeholder-gray-400 transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
+                            errors.confirmPassword
+                              ? "border-red-500 bg-red-50"
+                              : "border-gray-300 bg-gray-50 hover:bg-white"
+                          }`}
+                        />
+                        <button
+                          type="button"
+                          onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                          className="absolute right-3 sm:right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors"
+                          aria-label="Toggle password visibility"
+                        >
+                          {showConfirmPassword ? (
+                            <EyeOff size={18} className="sm:w-5 sm:h-5" />
+                          ) : (
+                            <Eye size={18} className="sm:w-5 sm:h-5" />
+                          )}
+                        </button>
+                      </div>
+                      {errors.confirmPassword && (
+                        <p className="text-red-600 text-xs sm:text-sm mt-1 md:mt-2 flex items-center gap-1">
+                          <span>⚠</span> {errors.confirmPassword.message}
+                        </p>
+                      )}
+                    </div>
+                  )}
 
                   {/* Remember & Forgot */}
                   <div className="flex items-center justify-between text-xs sm:text-sm gap-2">
