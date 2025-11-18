@@ -35,21 +35,20 @@ const mostwantedCategories = [
 
 const MostWanted = () => {
   return (
-    <div className="mt-5">
+    <div className="container mx-auto py-8 px-4">
       <div className="flex flex-col align-center items-center justify-center">
-        <h1 className="text-center text-xl font-MontSemiBold text-[#9d6a37]">
+        <h1 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-MontSemiBold text-[#9d6a37] my-4">
           Explore Most Wanted
         </h1>
         {/* Categories-Cards */}
-        <div className="cards grid grid-cols-3 mt-4 gap-6 overflow-hidden">
+        <div className="cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-4 gap-4 md:gap-6 w-full">
           {mostwantedCategories.map((category, index) => (
             <div className="text-[0.9rem]" key={index}>
               <a
-                href="#"
-                className="text-[#5b5b5b] font-MontSemiBold hover:text-[#e57200] hover:font-MontBold"
+                className="text-[#5b5b5b] font-MontSemiBold hover:text-[#e57200] hover:font-MontBold cursor-pointer"
               >
                 <img
-                  className="object-fill w-[24rem] h-[24rem] border-solid "
+                  className="object-cover w-full h-64 md:h-72 lg:h-96 border-solid"
                   src={category.image}
                   alt={category.image}
                 />
