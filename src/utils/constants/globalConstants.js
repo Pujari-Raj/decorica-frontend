@@ -12,8 +12,8 @@ export const ROUTES_ARR = [
   { name: "Shop", component: "", path: "/shop" },
   // {name: "Login", component: Login, path: "/login"},
   // {name: "AuthForm", component: AuthForm, path: "/authform"}
-  // { name: "", component: Blog, path: "/blog" },
-  // { name: "FAQs", component: Faq, path: "/faqs" },
+  { name: "Blog", component: Blog, path: "/blog" },
+  { name: "FAQs", component: Faq, path: "/faqs" },
 ];
 
 export const HIDDEN_ROUTES = [
@@ -49,10 +49,53 @@ export const MERGED_ROUTES = [
   ...SUPPORT_ROUTES,
   ...PLATFORM_ROUTES,
   ...HELP_ROUTES,
-  ...HIDDEN_ROUTES
+  ...HIDDEN_ROUTES,
 ].filter((route) => route.component);
 
 // function for filtering class
 export function cn(...classes) {
   return classes.filter(Boolean).join(" ");
 }
+
+// adding productCatgeories constant
+
+export const categories = [
+  { name: "Vases", image: "assets/productimages/vase-banner.jpg" },
+  { name: "Planters", image: "assets/productimages/planter-banner.jpg" },
+  { name: "Lights", image: "assets/productimages/lights-banner.jpg" },
+  { name: "Photo Frames", image: "assets/productimages/pframe-banner.jpg" },
+  { name: "Mirrors", image: "assets/productimages/mirror-banner.jpg" },
+];
+
+export const mostwantedCategories = [
+  {
+    image: "assets/productimages/sculpture-img.jpg",
+    title: "Sculptural vase",
+    description: "25+ Options, Explore Starting ₹9849",
+  },
+  {
+    image: "assets/productimages/chandelier.jpg",
+    title: "Chandeliers",
+    description: "25+ Options, Explore Starting ₹9849",
+  },
+  {
+    image: "assets/productimages/plastic-plant.jpg",
+    title: "Plastic Plants Pots",
+    description: "25+ Options, Explore Starting ₹9849",
+  },
+  {
+    image: "assets/productimages/galleryframe.webp",
+    title: "Gallery Frame",
+    description: "25+ Options, Explore Starting ₹9849",
+  },
+  {
+    image: "assets/productimages/decorative-light.webp",
+    title: "Decorative Mirrors",
+    description: "25+ Options, Explore Starting ₹9849",
+  },
+  {
+    image: "assets/productimages/wall-scone.jpg",
+    title: "Wall Scone Lights",
+    description: "25+ Options, Explore Starting ₹9849",
+  },
+];
