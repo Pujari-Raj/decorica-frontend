@@ -1,152 +1,86 @@
 import React, { useEffect, useState } from "react";
-import { CarouselProvider, Slider, Slide } from "pure-react-carousel";
-import "pure-react-carousel/dist/react-carousel.es.css";
-
-const slides = [
-  { src: "./assets/featuredImages/white-vase.jpg", alt: "White Vase" },
-  { src: "./assets/featuredImages/ceramic-vase.jpg", alt: "Ceramic Vase" },
-  { src: "./assets/featuredImages/white-planter.jpg", alt: "Polymer Planter" },
-  {
-    src: "./assets/featuredImages/brown-planter.jpg",
-    alt: "Wooden Planter",
-  },
-  {
-    src: "./assets/featuredImages/hanging-light.jpg",
-    alt: "Hanging Light",
-  },
-  {
-    src: "./assets/featuredImages/pendant-light.jpg",
-    alt: "Pendant Light",
-  },
-  { src: "./assets/featuredImages/study-lamp.jpg", alt: "Study Lamp" },
-  { src: "./assets/featuredImages/lamp-table.jpg", alt: "Table Lamp" },
-  { src: "./assets/featuredImages/wooden-frame.jpg", alt: "Wooden Frame" },
-  {
-    src: "./assets/featuredImages/white-frames.jpg",
-    alt: "Portrait Frames",
-  },
-  { src: "./assets/featuredImages/man-figurine.jpg", alt: "Man Figurine" },
-  {
-    src: "./assets/featuredImages/circluar-mirror.jpg",
-    alt: "Aluminium Mirror",
-  },
-];
-
-const extendedSlides = [
-  ...slides,
-  slides[0],
-  slides[1],
-  slides[2],
-  slides[3],
-  slides[4],
-  slides[5],
-];
+import { arrivalsSlides } from '../../utils/constants/globalConstants'
 
 const NewArrivals = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentSlide((prevSlide) => {
-        if (prevSlide >= slides.length - 1) {
-          // Handling the special case of the last slide
-          setIsTransitioning(true);
-          // Returning next slide in the duplicated section
-          return prevSlide + 1;
-        } else if (prevSlide >= slides.length + 3) {
-          // Checking If we've gone through all duplicates, jump back to start
-          return 0;
-        }
-        return prevSlide + 1;
-      });
+      setCurrentIndex((prev) => (prev + 1) % arrivalsSlides.length);
     }, 3500);
 
     return () => clearInterval(intervalId);
   }, []);
 
-  // Handle reset to first slide when we finish showing duplicates
-  useEffect(() => {
-    if (currentSlide >= slides.length + 3) {
-      // Waiting for a bit to ensure the transition has finished visually
-      const resetTimeout = setTimeout(() => {
-        setIsTransitioning(true);
-        setCurrentSlide(0);
-
-        // After resetting, allowing transitions again
-        const transitionTimeout = setTimeout(() => {
-          setIsTransitioning(false);
-        }, 50);
-
-        return () => clearTimeout(transitionTimeout);
-      }, 50);
-
-      return () => clearTimeout(resetTimeout);
-    } else if (isTransitioning && currentSlide < slides.length) {
-      // Once we're back to a normal slide and were transitioning, allowing transitions again
-      const transitionTimeout = setTimeout(() => {
-        setIsTransitioning(false);
-      }, 50);
-
-      return () => clearTimeout(transitionTimeout);
+  const visibleSlides = 4;
+  const getVisibleSlides = () => {
+    const visible = [];
+    for (let i = 0; i < visibleSlides; i++) {
+      visible.push(arrivalsSlides[(currentIndex + i) % arrivalsSlides.length]);
     }
-  }, [currentSlide, isTransitioning]);
+    return visible;
+  };
 
   return (
-    <div className="ml-4">
-      <div className="text-center my-8 font-bold text-[#9d6a37]">
-        <h1 className="text-xl font-MontSemiBold">Discover New Arrivals</h1>
-        <h1 className="text-2xl font-MontSemiBold">
+    <div className="w-full lg:w-full md:container md:mx-auto py-8 px-4">
+      <div className="text-center my-8 font-bold px-4 md:px-0">
+        <h1 className="text-[2rem] leading-[2.5rem]  md:text-4xl lg:text-5xl font-MontSemiBold text-[#9d6a37] ">Discover New Arrivals</h1>
+        <h1 className="text-[1.2rem] leading-[1.8rem] md:text-2xl lg:text-2xl font-MontSemiBold">
           Shop Before They Become Old
         </h1>
       </div>
-      <div className="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-center">
-        <CarouselProvider
-          className="lg:block hidden"
-          naturalSlideWidth={100}
-          isIntrinsicHeight={true}
-          totalSlides={extendedSlides.length}
-          visibleSlides={4}
-          step={1}
-          infinite={true}
-          currentSlide={currentSlide}
-          dragEnabled={false}
-          touchEnabled={false}
-          isPlaying={false} // We're controlling this manually
-          lockOnWindowScroll={true}
-          orientation="horizontal"
-        >
-          <div className="w-full relative flex items-center justify-center">
-            <div className="w-full h-full mx-auto overflow-hidden">
-              <Slider
-                classNameAnimation={
-                  isTransitioning ? "" : "carousel__slider-tray--transition"
-                }
-                className="h-full"
-              >
-                <div className="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
-                  {extendedSlides.map((slide, index) => (
-                    <Slide key={index} index={index} className="h-full">
-                      <div className="flex flex-shrink-0 relative w-full sm:w-auto">
-                        <img
-                          src={slide.src}
-                          alt={slide.alt}
-                          className="object-cover object-center w-full"
-                          loading="eager"
-                        />
-                        <div className="bg-gray-800 bg-opacity-30 absolute w-full p-6 flex h-full items-end pb-6">
-                          <h3 className="text-xl lg:text-2xl font-MontMedium leading-5 lg:leading-6 text-white">
-                            {slide.alt}
-                          </h3>
-                        </div>
-                      </div>
-                    </Slide>
-                  ))}
+
+      {/* Desktop Carousel */}
+      <div className="hidden md:block">
+        <div className="relative overflow-hidden">
+          <div className="cards grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mt-4 gap-4 md:gap-6 w-full">
+            {getVisibleSlides().map((slide, idx) => (
+              <div key={idx} className="">
+                <div className="relative overflow-hidden rounded-lg">
+                  <img
+                    src={slide?.src ?? "/placeholder.svg"}
+                    alt={slide?.alt}
+                    className="w-full h-80 object-cover"
+                  />
+                  <div className="bg-gray-800 bg-opacity-30 absolute inset-0 flex items-end p-6">
+                    <h3 className="text-xl font-MontMedium text-white">
+                      {slide?.alt}
+                    </h3>
+                  </div>
                 </div>
-              </Slider>
-            </div>
+              </div>
+            ))}
           </div>
-        </CarouselProvider>
+        </div>
+      </div>
+
+      {/* Mobile/Tablet View */}
+      <div className="md:hidden">
+        <div className="relative overflow-hidden rounded-lg">
+          <img
+            src={arrivalsSlides?.[currentIndex]?.src ?? "/placeholder.svg"}
+            alt={arrivalsSlides?.[currentIndex]?.alt}
+            className="w-full h-64 md:h-80 object-cover"
+          />
+          <div className="bg-gray-800 bg-opacity-30 absolute inset-0 flex items-end p-6">
+            <h3 className="text-lg md:text-xl font-MontMedium text-white">
+              {arrivalsSlides?.[currentIndex]?.alt}
+            </h3>
+          </div>
+        </div>
+        {/* Navigation dots for mobile */}
+        <div className="flex justify-center gap-2 mt-4">
+          {arrivalsSlides?.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentIndex(idx)}
+              className={`h-2 rounded-full transition ${
+                idx === currentIndex ? "bg-[#9d6a37] w-8" : "bg-gray-300 w-2"
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

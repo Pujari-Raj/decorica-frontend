@@ -99,3 +99,33 @@ export const mostwantedCategories = [
     description: "25+ Options, Explore Starting ₹9849",
   },
 ];
+
+export const arrivalsSlides = [
+  { src: "./assets/featuredImages/white-vase.jpg", alt: "White Vase" },
+  { src: "./assets/featuredImages/ceramic-vase.jpg", alt: "Ceramic Vase" },
+  { src: "./assets/featuredImages/white-planter.jpg", alt: "Polymer Planter" },
+  {
+    src: "./assets/featuredImages/brown-planter.jpg",
+    alt: "Wooden Planter",
+  },
+  {
+    src: "./assets/featuredImages/hanging-light.jpg",
+    alt: "Hanging Light",
+  },
+  {
+    src: "./assets/featuredImages/pendant-light.jpg",
+    alt: "Pendant Light",
+  },
+  { src: "./assets/featuredImages/study-lamp.jpg", alt: "Study Lamp" },
+  { src: "./assets/featuredImages/lamp-table.jpg", alt: "Table Lamp" },
+  { src: "./assets/featuredImages/wooden-frame.jpg", alt: "Wooden Frame" },
+  {
+    src: "./assets/featuredImages/white-frames.jpg",
+    alt: "Portrait Frames",
+  },
+  { src: "./assets/featuredImages/man-figurine.jpg", alt: "Man Figurine" },
+  {
+    src: "./assets/featuredImages/circluar-mirror.jpg",
+    alt: "Aluminium Mirror",
+  },
+];
