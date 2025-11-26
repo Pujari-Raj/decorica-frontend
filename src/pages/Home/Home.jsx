@@ -1,4 +1,3 @@
-import React from 'react'
 import HeroSection from './HeroSection'
 import ProductCategories from './ProductCategories'
 import MostWanted from './MostWanted'

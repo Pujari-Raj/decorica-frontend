@@ -58,7 +58,6 @@ export function cn(...classes) {
 }
 
 // adding productCatgeories constant
-
 export const categories = [
   { name: "Vases", image: "assets/productimages/vase-banner.jpg" },
   { name: "Planters", image: "assets/productimages/planter-banner.jpg" },
@@ -67,6 +66,7 @@ export const categories = [
   { name: "Mirrors", image: "assets/productimages/mirror-banner.jpg" },
 ];
 
+// mostwantedCategories constants
 export const mostwantedCategories = [
   {
     image: "assets/productimages/sculpture-img.jpg",
@@ -100,6 +100,7 @@ export const mostwantedCategories = [
   },
 ];
 
+// arrivals constants
 export const arrivalsSlides = [
   { src: "./assets/featuredImages/white-vase.jpg", alt: "White Vase" },
   { src: "./assets/featuredImages/ceramic-vase.jpg", alt: "Ceramic Vase" },
@@ -128,4 +129,15 @@ export const arrivalsSlides = [
     src: "./assets/featuredImages/circluar-mirror.jpg",
     alt: "Aluminium Mirror",
   },
+];
+
+// ourclients constants
+
+export const clientLogos = [
+  { image: "assets/brandlogos/amara.jpeg" },
+  { image: "assets/brandlogos/arc.jpg" },
+  { image: "assets/brandlogos/foxhub.jpeg" },
+  { image: "assets/brandlogos/aven.jpeg" },
+  { image: "assets/brandlogos/hexa.jpeg" },
+  { image: "assets/brandlogos/aven.jpeg" },
 ];

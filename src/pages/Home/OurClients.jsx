@@ -1,14 +1,5 @@
-import React from "react";
 import Marquee from "react-fast-marquee";
-
-const clientLogos = [
-  { image: "assets/brandlogos/amara.jpeg" },
-  { image: "assets/brandlogos/arc.jpg" },
-  { image: "assets/brandlogos/foxhub.jpeg" },
-  { image: "assets/brandlogos/aven.jpeg" },
-  { image: "assets/brandlogos/hexa.jpeg" },
-  { image: "assets/brandlogos/aven.jpeg" },
-];
+import { clientLogos } from "../../utils/constants/globalConstants";
 
 const OurClients = () => {
   return (
