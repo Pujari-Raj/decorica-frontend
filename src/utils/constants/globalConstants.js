@@ -1,15 +1,16 @@
-// import Home from "../pages/Home/Home";
-
 import React from "react";
 
 const Home = React.lazy(() => import("../../pages/Home/Home"));
 const Blog = React.lazy(() => import("../../pages/Blog/Blog"));
 const Faq = React.lazy(() => import("../../pages/Faq/Faq"));
+const Shop = React.lazy(() => import("../../pages/Shop/Shop"))
+
+
 const AuthForm = React.lazy(() => import("../../pages/Auth/AuthForm"));
 
 export const ROUTES_ARR = [
   { name: "Home", component: Home, path: "/" },
-  { name: "Shop", component: "", path: "/shop" },
+  { name: "Shop", component: Shop, path: "/shop" },
   // {name: "Login", component: Login, path: "/login"},
   // {name: "AuthForm", component: AuthForm, path: "/authform"}
   { name: "Blog", component: Blog, path: "/blog" },
