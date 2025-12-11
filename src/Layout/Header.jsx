@@ -176,7 +176,7 @@ const Header = () => {
                 <div
                   className={`absolute mt-3 rounded-md ${
                     isLoggedIn
-                      ? "w-[10rem] right-[-35px]"
+                      ? "w-[10rem] right-0"
                       : "w-[20.5rem] right-0"
                   } bg-white border border-gray-200 shadow-lg z-50 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300`}
                 >
@@ -194,7 +194,7 @@ const Header = () => {
                         className="group/item font-MontMedium flex items-center gap-3 px-4 py-2 text-sm hover:text-[#f15c33]"
                       >
                         <Icons.Cart className="w-5 h-5 text-gray-600 group-hover/item:text-[#f15c33]" />
-                        <span>Cart</span>
+                        <span>Orders</span>
                       </Link>
                       <Link
                         to="/wishlist"
@@ -346,7 +346,7 @@ const Header = () => {
                     className="px-3 py-2 text-sm font-MontMedium text-gray-700 hover:text-[#f15c33] flex items-center gap-2"
                   >
                     <Icons.Cart className="w-4 h-4" />
-                    Cart
+                    Orders
                   </Link>
                   <Link
                     to="/wishlist"
