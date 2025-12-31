@@ -142,3 +142,43 @@ export const clientLogos = [
   { image: "assets/brandlogos/hexa.jpeg" },
   { image: "assets/brandlogos/aven.jpeg" },
 ];
+
+// category routes
+
+export const CATEGORIES = [
+  {
+    id: "plants",
+    label: "Plant Decor",
+    path: "/category/plants",
+    subcategories: ["Indoor Plants", "Outdoor Plants", "Plant Accessories"],
+    category: "plants",
+  },
+  {
+    id: "vases",
+    label: "Vases",
+    path: "/category/vases",
+    subcategories: ["Glass Vases", "Ceramic Vases", "Metal Vases"],
+    category: "vases",
+  },
+  {
+    id: "mirrors",
+    label: "Mirrors",
+    path: "/category/mirrors",
+    subcategories: ["Wall Mirrors", "Decorative Mirrors", "Floor Mirrors"],
+    category: "mirrors",
+  },
+  {
+    id: "wall-art",
+    label: "Wall Art",
+    path: "/category/wall-art",
+    subcategories: ["Paintings", "Prints", "Tapestries"],
+    category: "wall-art",
+  },
+  {
+    id: "garden",
+    label: "Garden Items",
+    path: "/category/garden",
+    subcategories: ["Garden Decor", "Plant Pots", "Garden Tools"],
+    category: "garden",
+  },
+];

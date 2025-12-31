@@ -1,43 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import NavLinks from "./NavLinks";
-import { ROUTES_ARR } from "../utils/constants/globalConstants";
-import UserActions from "./UserActions";
+import { CATEGORIES, ROUTES_ARR } from "../utils/constants/globalConstants";
+// import UserActions from "./UserActions";
 import { Icons } from "../Icons/Icons";
-import SellerNavigation from "./SellerNavigation";
-
-const CATEGORIES = [
-  {
-    id: "plants",
-    label: "Plant Decor",
-    path: "/category/plants",
-    subcategories: ["Indoor Plants", "Outdoor Plants", "Plant Accessories"],
-  },
-  {
-    id: "vases",
-    label: "Vases",
-    path: "/category/vases",
-    subcategories: ["Glass Vases", "Ceramic Vases", "Metal Vases"],
-  },
-  {
-    id: "mirrors",
-    label: "Mirrors",
-    path: "/category/mirrors",
-    subcategories: ["Wall Mirrors", "Decorative Mirrors", "Floor Mirrors"],
-  },
-  {
-    id: "wall-art",
-    label: "Wall Art",
-    path: "/category/wall-art",
-    subcategories: ["Paintings", "Prints", "Tapestries"],
-  },
-  {
-    id: "garden",
-    label: "Garden Items",
-    path: "/category/garden",
-    subcategories: ["Garden Decor", "Plant Pots", "Garden Tools"],
-  },
-];
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState("");
@@ -175,9 +141,7 @@ const Header = () => {
 
                 <div
                   className={`absolute mt-3 rounded-md ${
-                    isLoggedIn
-                      ? "w-[10rem] right-0"
-                      : "w-[20.5rem] right-0"
+                    isLoggedIn ? "w-[10rem] right-0" : "w-[20.5rem] right-0"
                   } bg-white border border-gray-200 shadow-lg z-50 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300`}
                 >
                   {isLoggedIn ? (
@@ -240,14 +204,14 @@ const Header = () => {
       <nav className="hidden md:block sticky top-0 z-40 w-full bg-white border-t border-b border-gray-200">
         <div className="w-full mx-auto px-2 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center h-11 w-full gap-8">
-            {CATEGORIES.map((category) => (
+            {CATEGORIES?.map((category) => (
               <Link
-                key={category.id}
-                to={category.path}
-                onClick={() => handleLinkClick(category.id)}
+                key={category?.id}
+                to={category?.path}
+                onClick={() => handleLinkClick(category?.id)}
                 className="text-sm font-MontMedium py-3 px-1 border-b-4 transition-colors duration-200 border-transparent text-gray-700 hover:text-[#f15c33] hover:border-[#f15c33]"
               >
-                {category.label}
+                {category?.label}
               </Link>
             ))}
           </div>
@@ -302,11 +266,11 @@ const Header = () => {
                 onClick={() => handleCategoryClick(null)}
                 className="px-4 py-3 text-sm font-MontMedium border-l-4 transition-colors text-gray-700 hover:text-[#f15c33] border-l-transparent hover:border-l-[#f15c33] flex items-center justify-between w-full text-left"
               >
-                <span className="flex items-center gap-3">
-                  <Icons.HamburgerMenu className="w-4 h-4" />
+                <span className="flex items-center gap-1">
+                  <Icons.CategoryMenuIcon className="w-6 h-6 rotate-[270deg]" />
                   Browse All Categories
                 </span>
-                <Icons.ChevronDown className="w-4 h-4" />
+                <Icons.ChevronRight className="w-6 h-6" />
               </button>
             </div>
 
@@ -394,28 +358,28 @@ const Header = () => {
 
             {/* Category List with Expandable Items */}
             <div className="flex flex-col space-y-0 py-2 max-h-[calc(100vh-120px)] overflow-y-auto">
-              {CATEGORIES.map((category) => (
-                <div key={category.id}>
-                  <div className="flex items-center justify-between px-4 py-3 text-sm font-MontMedium text-gray-700 hover:text-[#f15c33] hover:bg-orange-50 cursor-pointer">
-                    <span>{category.label}</span>
-                    <Icons.ChevronDown className="w-4 h-4" />
-                  </div>
-                  {/* Subcategories */}
-                  <div className="bg-gray-50 border-l-4 border-transparent">
-                    {category.subcategories.map((subcategory) => (
+              {CATEGORIES?.map((category) => (
+                <>
+                  <div key={category?.id}>
+                    <div
+                      className={`flex items-center justify-between px-4 py-3 text-sm font-MontMedium border-l-4 cursor-pointer
+                      ${
+                        activeLink === category?.path
+                          ? "text-[#f15c33] bg-orange-50 border-l-[#f15c33]"
+                          : "text-gray-700 hover:text-[#f15c33] border-l-transparent hover:border-l-[#f15c33]"
+                      }
+                      `}
+                    >
                       <Link
-                        key={subcategory}
-                        to={`${category.path}/${subcategory
-                          .toLowerCase()
-                          .replace(/\s+/g, "-")}`}
-                        onClick={() => handleLinkClick(subcategory)}
-                        className="block px-8 py-2 text-xs font-MontMedium text-gray-600 hover:text-[#f15c33] hover:bg-white transition-colors"
+                        to={`${category?.path}`}
+                        onClick={() => handleLinkClick(category?.path)}
                       >
-                        {subcategory}
+                        <span>{category?.label}</span>
                       </Link>
-                    ))}
+                      <Icons.ChevronRight className="w-4 h-4" />
+                    </div>
                   </div>
-                </div>
+                </>
               ))}
             </div>
           </>
